@@ -30,9 +30,9 @@ public class WorkHomePage extends BasePage{
         super(driver,uiElementMapper,user);
 
         try {
-            wait.until(ExpectedConditions.titleIs("Search TMAN"));
+            wait.until(ExpectedConditions.titleIs("Search Work"));
 
-            lblSearchWork =wait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement("WorkHomePage.lblSearchTman.id"))));
+            lblSearchWork =wait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement("WorkHomePage.lblSearchWork.id"))));
             btnAdvancedSearch=wait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement("WorkHomePage.btnAdvancedSearch.id"))));
             btnCreateWork =wait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement("WorkHomePage.btnCreateTMAN.id"))));
             lblUserName=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(uiElementMapper.getElement("WorkHomePage.lblUserName.xpath"))));
@@ -49,7 +49,7 @@ public class WorkHomePage extends BasePage{
     public void checkWorkSearchTableLoad(){
         WebDriverWait longwait=new WebDriverWait(driver, 100);
         longwait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement
-                ("WorkHomePage.tableTMAN.id"))));
+                ("WorkHomePage.tableWork.id"))));
         longwait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement
                 ("WorkHomePage.tableNoOfEntries.id"))));
 
@@ -69,7 +69,7 @@ public class WorkHomePage extends BasePage{
 
     public List<WebElement> findMatchingTableRow(String searchTerm){
 
-        tableWork =wait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement("WorkHomePage.tableTMAN.id"))));
+        tableWork =wait.until(ExpectedConditions.elementToBeClickable(By.id(uiElementMapper.getElement("WorkHomePage.tableWork.id"))));
 
         List<WebElement>  matchingRows=new ArrayList<>();
 //        List<WebElement> cells=new ArrayList<>();
